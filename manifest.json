@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "YT Music Shortcuts",
+    "version": "0.0.1",
+    "commands": {
+        "prevTrack": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Comma"
+            },
+            "description": "Rewind to previous track",
+            "gloabl": true
+        },
+        "nextTrack": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Period"
+            },
+            "description": "Skip to next track",
+            "gloabl": true
+        },
+        "playPause": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Space"
+            },
+            "description": "Play/Pause",
+            "gloabl": true
+        }
+    },
+    "background": {
+        "service_worker": "src/background.mjs",
+        "type": "module"
+    },
+    "host_permissions": ["https://music.youtube.com/"],
+    "content_scripts": [{
+        "matches": ["https://music.youtube.com/*"],
+        "run_at": "document_start",
+        "js": ["src/page.js"]
+    }]
+}
