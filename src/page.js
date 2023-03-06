@@ -1,9 +1,9 @@
 function nextTrack() {
-    document.querySelector('[aria-label="Next song"]').click();
+    document.querySelector('.ytmusic-player-bar.next-button').click();
 }
 
 function prevTrack() {
-    document.querySelector('[aria-label="Previous song"]').click();
+    document.querySelector('.ytmusic-player-bar.previous-button').click();
 }
 
 function playPause() {
